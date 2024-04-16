@@ -3,22 +3,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "mispeech",
+    name: "asr",
     platforms: [
         .iOS(.v16),
     ],
     products: [
         .library(
-            name: "mispeech",
-            targets: ["mispeech"]),
+            name: "asr",
+            targets: ["asr"]),
     ],
     dependencies: [
         .package(url: "https://github.com/dstbando/whisper.cpp", .upToNextMajor(from: "0.0.6")),
     ],
     targets: [
         .binaryTarget(
-            name: "mispeech",
-            url: "https://github.com/dstbando/mispeech/releases/download/0.0.2/mispeech.xcframework.zip",
-            checksum: "b1a58ecac9f45faa13a58ea0087ef792c80b2a838772340112452af1c5e915ab"),
+            name: "asr",
+            url: "https://github.com/dstbando/asr/releases/download/0.0.2/asr.xcframework.zip",
+            checksum: "5d9fade5148cc789292d22056c2b74976345d72bbede75751e77ad270014c82b"),
     ]
 )
