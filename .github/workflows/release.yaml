@@ -1,0 +1,30 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Extract version number from Package.swift
+        id: extract_version
+        run: |
+          version=$(grep -oP 'url: "https://github.com/dstbando/mispeech/releases/download/\K[0-9]+\.[0-9]+\.[0-9]+' Package.swift)
+          echo "Version extracted: $version"
+          echo "version=$version" >> $GITHUB_ENV
+
+      - name: Create Release and Upload Asset
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.version }}
+          name: Release ${{ env.version }}
+          files: mispeech.xcframework.zip
+          draft: false
+          prerelease: false
