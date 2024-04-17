@@ -19,6 +19,6 @@ let package = Package(
         .binaryTarget(
             name: "asr",
             url: "https://github.com/dstbando/asr/releases/download/0.0.4/asr.xcframework.zip",
-            checksum: "b1a58ecac9f45faa13a58ea0087ef792c80b2a838772340112452af1c5e915ab"),
+            checksum: "bed871d71325e4f11d35dd1eeaf5c7d0953243d3399ccd45f853e14df23c4705"),
     ]
 )
