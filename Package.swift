@@ -18,7 +18,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "mispeech",
-            url: "https://github.com/dstbando/mispeech/releases/download/0.0.4/mispeech.xcframework.zip",
+            url: "https://github.com/dstbando/mispeech/releases/download/0.0.6/mispeech.xcframework.zip",
             checksum: "bed871d71325e4f11d35dd1eeaf5c7d0953243d3399ccd45f853e14df23c4705"),
     ]
 )
